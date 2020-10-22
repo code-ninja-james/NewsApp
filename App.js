@@ -4,8 +4,7 @@ import * as Font from 'expo-font';
 import {AppLoading} from 'expo';
 
 
-import Header from './src/components/Header';
-import Card from './src/components/Card';
+import AppNavigator from './src/navigation/AppNavigator';
 
 const loadFonts=()=>{
   return Font.loadAsync({
@@ -25,10 +24,7 @@ export default function App() {
     );
   }
   return (
-   <View>
-<Header/>
-<Card/>
-   </View>
+   <AppNavigator/>
   );
 }
 

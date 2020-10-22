@@ -1,9 +1,11 @@
 import React from 'react';
-import {StyleSheet,Text,View,Image} from 'react-native';
+import {StyleSheet,Text,View,Image,TouchableOpacity} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const Card =()=>{
-    return(
+
+const Card = props=>{
+  return(
+    <TouchableOpacity onPress={()=>props.navigation.navigate('NewsDetails')}>
     <View style={styles.card}>
   <View style={styles.imageWrapper}>
     <Image 
@@ -20,6 +22,7 @@ const Card =()=>{
       <Text style={styles.description}>This is a dummy description</Text>
       </View>
      </View>
+     </TouchableOpacity>
     );
 }
 const styles = StyleSheet.create({
