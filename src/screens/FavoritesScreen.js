@@ -4,7 +4,7 @@ import{StyleSheet,View,Text} from 'react-native';
 const FavoritesScreen =()=>{
 return(
     <View>
-        <Text>News Details Screen</Text>
+        <Text>Favorites Screen</Text>
     </View>
 )
 
