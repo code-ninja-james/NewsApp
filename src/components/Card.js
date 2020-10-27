@@ -1,25 +1,48 @@
 import React from 'react';
 import {StyleSheet,Text,View,Image,TouchableOpacity} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import {useDispatch,useSelector} from 'react-redux';
 
+
+import * as newsAction from '../redux/actions/newsAction';
 
 const Card = props=>{
+
+  const dispatch = useDispatch();
+  const isFav = useSelector(state=>state.news.favorites.some(article=>article.url===props.url));
+
   return(
-    <TouchableOpacity onPress={()=>props.navigation.navigate('NewsDetails')}>
+    <TouchableOpacity onPress={()=>{
+      props.navigation.navigate('NewsDetails',{
+        articleUrl:props.url
+      })
+    }}>
+
     <View style={styles.card}>
   <View style={styles.imageWrapper}>
     <Image 
-    source={{uri:'https://www.baronmethod.com/wp-content/uploads/2017/03/submit_news.jpg'}}
+    source={{uri:props.image?props.image:'https://img.favpng.com/2/10/25/progress-bar-computer-icons-loading-screen-png-favpng-Yn0AErnHnBe2GcAD31pbAqr8B.jpg'}}
    // source={require('../../assets/news.jpg')} 
     style={styles.image}
     />
   </View>
      <View style={styles.titleWrapper} >
-      <Text style={styles.title} >Dummy Title</Text>
-      <MaterialIcons name="favorite-border" color="#72bcd4" size={24}/>
+  <Text 
+    style={styles.title}>
+    {props.title && props.title.length>22?props.title.slice(0,22)+'...':props.title}
+    </Text>
+      <MaterialIcons 
+      name={isFav?'favorite':'favorite-border'}
+      color="#72bcd4" size={24}
+      onPress={()=>{
+dispatch(newsAction.toogleFavorites(props.url))
+      }}
+      />
       </View>
       <View style={styles.descriptionWrapper}>
-      <Text style={styles.description}>This is a dummy description</Text>
+  <Text style={styles.description}>
+    {props.description&&props.description.length>100 ?props.description.slice(0,100)+'...':props.description}
+    </Text>
       </View>
      </View>
      </TouchableOpacity>
