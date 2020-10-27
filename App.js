@@ -2,10 +2,10 @@ import React,{useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import {AppLoading} from 'expo';
+import {Provider}from 'react-redux';
 
-
-import Header from './src/components/Header';
-import Card from './src/components/Card';
+import AppNavigator from './src/navigation/AppNavigator';
+import store from './src/redux/store';
 
 const loadFonts=()=>{
   return Font.loadAsync({
@@ -25,10 +25,9 @@ export default function App() {
     );
   }
   return (
-   <View>
-<Header/>
-<Card/>
-   </View>
+   <Provider store={store}>
+<AppNavigator/>
+   </Provider>
   );
 }
 
