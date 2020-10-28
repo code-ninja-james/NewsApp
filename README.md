@@ -10,13 +10,13 @@
   <tr>
     <td>News Screen</td>
      <td>Drawer Screen</td>
-     <td>Fvorites Screen</td>
+     <td>Favorites Screen</td>
      <td>News Details Screen</td>
   </tr>
   <tr>
-    <td><img src="" width=270 height=480></td>
-    <td><img src="../../assets/newsScreen.png" width=270 height=480></td>
-    <td><img src="https://github.com/code-ninja-james/TodoApp/blob/update/assets/Screenshot2.png" width=270 height=480></td>
-    <td><img src="https://github.com/code-ninja-james/TodoApp/blob/update/assets/Screenshot2.png" width=270 height=480></td>
+    <td><img src="https://github.com/code-ninja-james/NewsApp/blob/card/assets/newsScreen.png" width=270 height=480></td>
+    <td><img src="https://github.com/code-ninja-james/NewsApp/blob/card/assets/drawer.png" width=270 height=480></td>
+    <td><img src="https://github.com/code-ninja-james/NewsApp/blob/card/assets/FavoritesScreen.png" width=270 height=480></td>
+    <td><img src="https://github.com/code-ninja-james/NewsApp/blob/card/assets/newsDetails.png" width=270 height=480></td>
   </tr>
  </table>
