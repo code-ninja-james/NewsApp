@@ -4,7 +4,7 @@
 1.Collect news from [api](https://newsapi.org/)<br/>
 2.Add and Delete news from favorite screen<br/>
 3.View details of news i.e author,title and news content
-#### Todo App Screenshots
+#### News App Screenshots
 
 <table>
   <tr>
